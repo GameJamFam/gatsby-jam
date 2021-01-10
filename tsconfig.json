@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "watch": false,
+    "noImplicitAny": false,
+        "sourceMap": true,
+        "declaration": false,
+        "alwaysStrict": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "strictNullChecks": false,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "target": "es2017",
+        "lib": ["dom", "es2017", "es2018.promise"], // add Promise.finally()
+        "module": "commonjs",
+    "baseUrl": "src",
+    "typeRoots": ["node_modules/@types", "typings"],
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

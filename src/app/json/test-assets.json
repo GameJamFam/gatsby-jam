@@ -1,0 +1,60 @@
+{"frames": {
+
+"building.png":
+{
+	"frame": {"x":1,"y":67,"w":75,"h":60},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":60},
+	"sourceSize": {"w":75,"h":60}
+},
+"car.png":
+{
+	"frame": {"x":1,"y":1,"w":138,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":64},
+	"sourceSize": {"w":138,"h":64}
+},
+"median.png":
+{
+	"frame": {"x":63,"y":67,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"player.png":
+{
+	"frame": {"x":97,"y":101,"w":28,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":32},
+	"sourceSize": {"w":28,"h":32}
+},
+"road.png":
+{
+	"frame": {"x":63,"y":101,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"sidewalk.png":
+{
+	"frame": {"x":97,"y":67,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "/images/test-assets.png",
+	"format": "RGBA8888",
+	"size": {"w":143,"h":143},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:73f04b1fa93aa4d5fd2ffd059fe69f08:fdb7008dda0f6ffb1f8d156c02c242ff:bc12c106298772da33b35075ebd3b5bc$"
+}
+}
