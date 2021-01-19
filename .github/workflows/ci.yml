@@ -16,27 +16,28 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-node@v1
-      with: 
-        node-version:  15.3.0
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version:  12.14.1
 
-    - name: Install npm deps
-      run: npm install
+      # Runs a single command using the runners shell
+      - name: Install npm deps
+        run: npm install
 
-    # Runs a set of commands using the runners shell
-    - name: Build prod
-      run: npm run build
-
-    - name: copy file via ssh key
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.REMOTE_USER }}
-        key: ${{ secrets.SSH_KEY }}
-        passphrase: ${{ secrets.SSH_PASSPHRASE}}
-        port: ${{ secrets.PORT }}
-        source: "dist/* "
-        target: ${{ secrets.REMOTE_DIR }}
+      # Runs a set of commands using the runners shell
+      - name: Build prod
+        run: npm run build
+      
+      - name: deploy-via-scp
+        uses: horochx/deploy-via-scp@v1.0.1
+        with:
+          local: dist/* # eg: dist/*
+          remote: ${{ secrets.REMOTE_DIR }} # eg: /home/github-action/www
+          host: ${{ secrets.HOST }} # eg: example.com
+          port: ${{ secrets.PORT }} # eg: 22
+          user: ${{ secrets.REMOTE_USER }} # eg: github-action
+          key: ${{ secrets.SSH_KEY }}
 
     
