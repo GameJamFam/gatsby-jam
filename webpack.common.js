@@ -39,26 +39,15 @@ module.exports = {
               },
         ]
     },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
     resolve: {
         plugins: [new TsconfigPathsPlugin()],
         extensions: ['.tsx', '.ts', '.js']
     },
-    // optimization: {
-    //     splitChunks: {
-    //         cacheGroups: {
-    //           pixi: {
-    //             test: /[\\/]node_modules[\\/](pixi.js)[\\/]/,
-    //             name: 'pixi',
-    //             chunks: 'all'
-    //           },
-    //           dragonBones: {
-    //             test: /[\\/]node_modules[\\/](dragonbones-pixi)[\\/]/,
-    //             name: 'dragonbones-pixi',
-    //             chunks: 'all'
-    //           }
-    //         }
-    //       }
-    //   },
     plugins: [
         new webpack.ProvidePlugin({
             PIXI: 'pixi.js' // makes dragonbones work
@@ -73,7 +62,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: '**/*.!(ts)',
+                    from: '**/*.!(ts|html)',
                     context: srcPath,
                     to: distPath + '/[folder]/[name].[ext]',
                     force: true,
