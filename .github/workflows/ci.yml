@@ -27,10 +27,8 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Build prod
       run: npm run build
-    - name: copy file via ssh key
-      uses: appleboy/scp-action@master
 
-    - name: copy file via ssh password
+    - name: copy file via ssh key
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST }}
