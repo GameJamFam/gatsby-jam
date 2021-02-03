@@ -21,6 +21,7 @@ export class Main extends Scene {
         }
 
         player.play();
+        
     }
 
 }

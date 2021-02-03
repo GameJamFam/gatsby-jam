@@ -6,6 +6,8 @@ import { Game } from "@/app";
 import { TestPlayer } from "@/app/gome-objects/player/test-player/test-player";
 import { Lane } from "@/app/components/street/lane";
 import { Street } from "@/app/components/street/street";
+import { Garage } from "@/app/components/garage";
+import { Rolls } from "@/app/gome-objects/vehicle/rolls/rolls";
 
 export class TestStreet extends Stage {
 
@@ -17,6 +19,12 @@ export class TestStreet extends Stage {
 
     constructor(){
         super(config);
+
+        if (!Garage.instance){
+            Garage.init();
+        }
+
+        Garage.instance.registerVehicles(Rolls)
         
         const sheet = Loader.shared.resources[config.spriteSheet].spritesheet;
         this.buildingsTop = new TilingSprite(sheet.textures['building.png'], 512, 32);

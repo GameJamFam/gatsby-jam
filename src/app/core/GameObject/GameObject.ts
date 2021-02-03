@@ -33,6 +33,10 @@ export class GameObject {
         this.sprite.position.set(x, y);
     }
 
+    destroy(){
+        this.sprite.destroy();
+    }
+
     get x(){
         return this.sprite.x;
     }
@@ -48,5 +52,18 @@ export class GameObject {
     set y(n: number){
         this.sprite.position.y = n;
     }
+
+    get width(){
+        return this.sprite.width;
+    }
+
+    get height(){
+        return this.sprite.height;
+    }
+
+    set width(w: number){
+        this.sprite.width = w;
+    }
+    
 
 }

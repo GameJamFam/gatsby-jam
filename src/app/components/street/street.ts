@@ -1,10 +1,18 @@
 import { Stage } from "@/app/core/Stage/Stage";
 import { Texture } from "pixi.js";
-import { Lane, TrafficDirection } from "./lane";
+import { Lane } from "./lane";
+import { TrafficDensity, TrafficDirection, TrafficLane } from "./traffic-lane";
+
+export interface StreetConfig {
+    road: Texture;
+    median: Texture;
+    numLanes: number;
+    trafficDensity: TrafficDensity;
+}
 
 export class Street {
 
-    lanes: Lane[] = [];
+    lanes: Lane[] | TrafficLane[] = [];
     median: Lane;
     numLanes: number = 4;
 
@@ -15,7 +23,7 @@ export class Street {
         
         for (let i = 1; i <= this.numLanes; i++){
             const offsetTop = 34;
-            const lane = new Lane(roadTexture, 512, 34);
+            const lane = new TrafficLane(roadTexture, 512, 34);
             lane.position.y = (i * 32) + 32;
             lane.tileTransform.rotation = i % 2 ? 0 : Math.PI;
             lane.tileScale.y = 1.2
@@ -31,7 +39,7 @@ export class Street {
             this.lanes.push(lane);
         }
 
-    }
+    }    
 
     addToStage(stage: Stage){
         console.log(this.lanes)

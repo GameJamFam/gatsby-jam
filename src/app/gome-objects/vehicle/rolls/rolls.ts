@@ -10,5 +10,5 @@ export class Rolls extends Vehicle {
     constructor(){
         super(Config);
     }
-
+    
 }
